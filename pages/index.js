@@ -20,7 +20,47 @@ export default class Index extends React.Component {
         </h1>
         <p>Welcome to your new clean Gatsby site</p>
       </div>
-      <form class="site-form" name="contact" autocomplete="off" method="post"><input type="hidden" name="form-name" value="contact"><fieldset class="fieldset"><input class="text-input" name="firstname" placeholder=" "><label class="field-label">First Name</label></fieldset><fieldset class="fieldset"><input class="text-input" name="lastname" placeholder=" "><label class="field-label">Last Name</label></fieldset><fieldset class="fieldset"><input class="text-input" type="email" name="email" required="" placeholder=" "><label class="field-label">Email</label></fieldset><fieldset class="fieldset"><textarea class="text-input input-textarea" row="6" name="inquiry" placeholder=" "></textarea><label class="field-label">Write inquiry here</label></fieldset><button class="form-submit button" type="submit">Submit</button></form>
     )
+render() {
+    return (
+      <div>
+        <h1>Contact</h1>
+        <form
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
+        >
+          <p hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your name:<br />
+            <input type="text" name="name" onChange={this.handleChange}/>
+            </label>
+          </p>
+          <p>
+            <label>
+              Your email:<br />
+              <input type="email" name="email" onChange={this.handleChange}/>
+            </label>
+          </p>
+          <p>
+            <label>
+              Message:<br />
+              <textarea name="message" onChange={this.handleChange}/>
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
+      </div>
+    );
   }
 }
