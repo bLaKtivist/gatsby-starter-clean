@@ -19,6 +19,21 @@ export default class Index extends React.Component {
           Hello World!
         </h1>
         <p>Welcome to your new clean Gatsby site</p>
+      <form name="contact-ai" netlify>
+  <p>
+    <label>Your Name: <input type="text" name="name"></label>
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email"></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+
       </div>
     )
   }
