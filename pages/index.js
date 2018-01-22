@@ -18,7 +18,7 @@ export default class Index extends React.Component {
         <h1>
           Hello World!
         </h1>
-        <p>Welcome to your new clean Gatsby site<br>go to <a href="/contact">contact form</a></p>
+        <p>Welcome to your new clean Gatsby site<br>go to<Link to="/contact/">Go to contact form</Link></p>
       </div>
     )
   }
